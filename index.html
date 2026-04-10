@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasper Detail Service</title>
+
+<!-- Google Fontで高級感 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #050505;
+  color: #fff;
+}
+
+/* ===== ヘッダー ===== */
+header {
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  max-height: 60px;
+}
+
+/* ===== ナビ ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #0a0a0a;
+  border-bottom: 1px solid #1a2a4f;
+}
+
+nav button {
+  flex: 1;
+  padding: 15px;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  color: #fff;
+  background: #1a2a4f;
+}
+
+/* ===== タブ ===== */
+.tab {
+  display: none;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.active { display: block; }
+
+.section-title {
+  font-size: 20px;
+  margin: 40px 0 15px;
+  color: #9fb3ff;
+  letter-spacing: 2px;
+}
+
+.highlight {
+  font-size: 22px;
+  font-style: italic;
+  text-align: center;
+  margin: 30px 0;
+  color: #dce3ff;
+}
+
+/* ===== 画像 ===== */
+img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: 0.4s;
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* ===== グリッド ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* ===== カード風 ===== */
+.card {
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== フォーム ===== */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg,#1a2a4f,#2d4aa0);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  opacity: 0.8;
+}
+
+/* ===== 固定ボタン ===== */
+.contact-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  z-index: 999;
+}
+
+.contact-bar a {
+  flex: 1;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.phone { background: #1a2a4f; }
+.email { background: #222; }
+.line { background: #06c755; }
+
+/* ===== レスポンシブ ===== */
+@media(max-width:600px){
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.png" alt="ロゴ">
+</header>
+
+<nav>
+  <button onclick="showTab(0)">ABOUT</button>
+  <button onclick="showTab(1)">SERVICE</button>
+  <button onclick="showTab(2)">CONTACT</button>
+</nav>
+
+<!-- タブ① -->
+<div class="tab active">
+
+  <img src="ai-car1.jpg" alt="メイン">
+
+  <div class="section-title">GREETING</div>
+  <div class="card">
+    車・オートバイの洗車・磨き・コーティング施工。<br>
+    2020年より高級欧州車ディーラーで月100台超の経験と実績を経て2026年春、独立。<br>
+    洗車～磨き～コーティングまで一貫して施工いたします。
+  </div>
+
+  <div class="highlight">
+    『貴方の大切なお車・オートバイにさらなる輝きを。』
+  </div>
+
+  <div class="section-title">SERVICE CONTENT</div>
+  <img src="ai-car2.jpg">
+  <div class="card">
+    コーティング施工・ガラスウロコ除去撥水・車内クリーニング・磨き・中古車商品化作業・手洗い洗車・ヘッドライトリペア 他
+  </div>
+
+  <div class="section-title">COMPANY</div>
+  <div class="card">
+    Jasper Detail Service<br><br>
+    代表者：山崎 碧<br>
+    対応可能地域：関東近郊全域<br>
+    電話番号：-<br>
+  </div>
+
+</div>
+
+<!-- タブ② -->
+<div class="tab">
+  <div class="section-title">BEFORE / AFTER</div>
+
+  <div class="grid">
+    <img src="before1.jpg">
+    <img src="after1.jpg">
+    <img src="before2.jpg">
+    <img src="after2.jpg">
+  </div>
+
+  <img src="bike.jpg">
+</div>
+
+<!-- タブ③ -->
+<div class="tab">
+  <div class="section-title">CONTACT</div>
+
+  <img src="ai-car3.jpg">
+
+  <form class="contact-form">
+    <input type="text" placeholder="お名前">
+    <input type="email" placeholder="メールアドレス">
+    <textarea rows="5" placeholder="お問い合わせ内容"></textarea>
+    <button type="submit">送信</button>
+  </form>
+</div>
+
+<!-- 固定ボタン -->
+<div class="contact-bar">
+  <a href="tel:" class="phone">📞 TEL</a>
+  <a href="mailto:" class="email">✉ MAIL</a>
+  <a href="#" class="line">LINE</a>
+</div>
+
+<script>
+function showTab(index){
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  tabs[index].classList.add('active');
+}
+</script>
+
+</body>
+</html>
