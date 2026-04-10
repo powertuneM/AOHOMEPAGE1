@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
-  background: linear-gradient(#0b0b0b, #1a1f35);
+  background: linear-gradient(#0b0b0b, #111827);
   color: #fff;
 }
 
@@ -19,8 +19,8 @@ body {
 header {
   display: flex;
   align-items: center;
-  padding: 12px 30px;
-  background: rgba(0,0,0,0.5);
+  padding: 10px 20px;
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -28,26 +28,22 @@ header {
 }
 
 header img {
-  height: 42px;
-  width: auto;
+  height: 45px;
 }
 
 /* ナビ */
 nav {
   display: flex;
   justify-content: center;
-  background: rgba(10,10,10,0.7);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(10,10,10,0.8);
 }
 
 nav button {
   flex: 1;
-  padding: 16px;
+  padding: 15px;
   background: none;
   border: none;
-  color: #aaa;
-  font-size: 14px;
-  letter-spacing: 1px;
+  color: #bbb;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -57,125 +53,89 @@ nav button:hover {
   background: #1a2a4f;
 }
 
-/* タブ */
 .tab {
   display: none;
-  padding: 70px 20px;
+  padding: 60px 20px;
   max-width: 1000px;
   margin: auto;
 }
 
 .active { display: block; }
 
-/* 見出し */
 .section-title {
-  font-size: 18px;
-  margin: 50px 0 20px;
+  font-size: 20px;
+  margin: 40px 0 15px;
   color: #c7d2fe;
   letter-spacing: 2px;
 }
 
-/* キャッチ */
 .highlight {
-  font-size: 24px;
+  font-size: 22px;
   font-style: italic;
   text-align: center;
-  margin: 40px 0;
+  margin: 30px 0;
   color: #e0e7ff;
 }
 
-/* カード */
-.card {
-  background: rgba(255,255,255,0.04);
-  padding: 25px;
-  border-radius: 14px;
-  line-height: 1.8;
-}
-
-/* 画像共通 */
-img:not(header img) {
+/* 画像 */
+img {
   width: 100%;
-  height: 320px;
+  max-height: 420px;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 12px;
   margin-bottom: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   transition: 0.4s;
 }
 
 img:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
-/* ヒーロー */
-.hero {
-  position: relative;
-}
-
-.hero img {
-  height: 65vh;
+.hero-img {
+  height: 60vh;
   border-radius: 0;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7));
-}
-
-.hero-text {
-  position: absolute;
-  top: 45%;
-  width: 100%;
-  text-align: center;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-/* BEFORE AFTER */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 15px;
 }
 
 .before-after-label {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
   color: #aaa;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
 }
 
-/* フォーム */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   margin-bottom: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   background: #111;
   color: #fff;
 }
 
 .contact-form button {
   width: 100%;
-  padding: 15px;
+  padding: 14px;
   background: linear-gradient(90deg,#1a2a4f,#4f6cff);
   border: none;
   color: white;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
+  border-radius: 6px;
 }
 
-.contact-form button:hover {
-  opacity: 0.8;
-}
-
-/* 固定ボタン */
 .contact-bar {
   position: fixed;
   bottom: 0;
@@ -186,20 +146,18 @@ img:hover {
 .contact-bar a {
   flex: 1;
   text-align: center;
-  padding: 15px;
-  color: white;
+  padding: 14px;
   text-decoration: none;
+  color: white;
   font-weight: bold;
 }
 
 .phone { background: #1a2a4f; }
-.email { background: #2a2a2a; }
+.email { background: #333; }
 .line { background: #06c755; }
 
-/* スマホ */
 @media(max-width:600px){
   .grid { grid-template-columns: 1fr; }
-  .hero-text { font-size: 20px; }
 }
 </style>
 </head>
@@ -207,7 +165,7 @@ img:hover {
 <body>
 
 <header>
-  <img src="logo_processed.png">
+  <img src="logo_processed.png" alt="ロゴ">
 </header>
 
 <nav>
@@ -216,13 +174,8 @@ img:hover {
   <button onclick="showTab(2)">CONTACT</button>
 </nav>
 
-<!-- ABOUT -->
 <div class="tab active">
-
-  <div class="hero">
-    <img src="ai-car1.jpg">
-    <div class="hero-text">最高品質のカーコーティング</div>
-  </div>
+  <img src="ai-car1.jpg" class="hero-img">
 
   <div class="section-title">GREETING</div>
   <div class="card">
@@ -231,9 +184,7 @@ img:hover {
     洗車～磨き～コーティングまで一貫して施工いたします。
   </div>
 
-  <div class="highlight">
-    『貴方の大切なお車・オートバイにさらなる輝きを。』
-  </div>
+  <div class="highlight">『貴方の大切なお車・オートバイにさらなる輝きを。』</div>
 
   <div class="section-title">SERVICE CONTENT</div>
   <div class="card">
@@ -246,20 +197,19 @@ img:hover {
     代表者：山崎 碧<br>
     対応可能地域：関東近郊全域<br>
     電話番号：080-8887-7295<br>
-    メール：yoshidatune@gmail.com
+    メール：yoshidatune@gmail.com<br><br>
+    事業内容：コーティング施工・ガラスウロコ除去撥水・車内クリーニング・磨き・中古車商品化作業・手洗い洗車・ヘッドライトリペア 他
   </div>
 
 </div>
 
-<!-- SERVICE -->
 <div class="tab">
-
   <div class="section-title">BEFORE / AFTER</div>
 
   <div class="grid">
     <div>
       <div class="before-after-label">BEFORE</div>
-      <img src="before1.png">
+      <img src="before1.jpg">
     </div>
     <div>
       <div class="before-after-label">AFTER</div>
@@ -279,24 +229,21 @@ img:hover {
   <img src="bike.jpg">
 </div>
 
-<!-- CONTACT -->
 <div class="tab">
-
   <div class="section-title">CONTACT</div>
 
   <form class="contact-form">
     <input type="text" placeholder="お名前">
     <input type="email" placeholder="メールアドレス">
     <textarea rows="5" placeholder="お問い合わせ内容"></textarea>
-    <button>送信する</button>
+    <button type="submit">送信</button>
   </form>
-
 </div>
 
 <div class="contact-bar">
   <a href="tel:08088877295" class="phone">📞 TEL</a>
   <a href="mailto:yoshidatune@gmail.com" class="email">✉ MAIL</a>
-  <a href="#" class="line">LINE</a>
+  <a href="https://line.me/ti/p/tWOxm0dIFQ" class="line">LINEで相談</a>
 </div>
 
 <script>
